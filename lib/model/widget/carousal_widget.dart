@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class NewsCarousel extends StatelessWidget {
   final List<Map<String, String>> imageDetails; // List of maps containing image URLs and headlines
-
+ 
   NewsCarousel({required this.imageDetails});
 
   @override

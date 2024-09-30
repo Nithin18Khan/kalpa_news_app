@@ -9,19 +9,19 @@ import 'package:kalpas_news_app/repo/bottom_bar_provider.dart';
 class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Watch the current index from the ViewModel
+    
     final currentIndex = ref.watch(bottomNavProvider);
 
-    // List of Screens corresponding to the BottomNav items
+    // List of Screens 
     final List<Widget> screens = [
-      NewsScreen(),    // Home
-      SearchScreen(),  // Search
-      CategoriesScreen(),  // Categories
-      ProfileScreen(),    // Profile
+      NewsScreen(),   
+      SearchScreen(), 
+      CategoriesScreen(), 
+      ProfileScreen(),   
     ];
 
     return Scaffold(
-      body: IndexedStack(  // Use IndexedStack to maintain state of each screen
+      body: IndexedStack(  
         index: currentIndex,
         children: screens,
       ),
@@ -46,7 +46,7 @@ class HomeScreen extends ConsumerWidget {
         ],
         currentIndex: currentIndex,
         onTap: (index) {
-          // Notify the ViewModel to change the index
+          
           ref.read(bottomNavProvider.notifier).changeIndex(index);
         },
         backgroundColor: Colors.blue,

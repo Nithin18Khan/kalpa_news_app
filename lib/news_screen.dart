@@ -18,7 +18,7 @@ class NewsScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Kalpa Top Headlines'),
+        title: Text('EyeT Top Headlines'),
         leading: IconButton(
           icon: Icon(Icons.menu_sharp),
           onPressed: () {

@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:kalpas_news_app/model/source_model.dart';
+import 'package:kalpas_news_app/model/search_model.dart';
 import 'package:kalpas_news_app/model/widget/webview_screen.dart';
 
-class NewsCard extends StatefulWidget {
+class SearchCard extends StatefulWidget {
   final String title;
-  final String description; 
+  final String description;
   final String date;
-  final String imageUrl;
-  final Article articles;
-
-  const NewsCard({
+  final String url;
+  final SearchModel searchModel;
+final String imageUrl;
+  const SearchCard({
     Key? key,
     required this.title,
     required this.description,
     required this.date,
-    required this.imageUrl,
-    required this.articles,
+    required this.url,
+    required this.searchModel,
+    required this.imageUrl
   }) : super(key: key);
 
   @override
-  _NewsCardState createState() => _NewsCardState();
+  _SearchCardState createState() => _SearchCardState();
 }
 
-class _NewsCardState extends State<NewsCard> {
+class _SearchCardState extends State<SearchCard> {
   bool _showFullDescription = false;
 
   @override
@@ -33,7 +34,7 @@ class _NewsCardState extends State<NewsCard> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => WebViewScreen(url: widget.articles.url),
+            builder: (context) => WebViewScreen(url: widget.searchModel.url),
           ),
         );
       },
